@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatLens — Parsing Summary</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}" />
+</head>
+<body>
+  <main class="dashboard">
+    <a href="/">← Analyze another chat</a>
+
+    <p class="eyebrow">PARSING COMPLETE</p>
+    <h1>ChatLens summary</h1>
+
+    <section class="metrics">
+      <article><span>Total rows</span><strong>{{ summary.total_rows }}</strong></article>
+      <article><span>Messages</span><strong>{{ summary.messages }}</strong></article>
+      <article><span>System messages</span><strong>{{ summary.system_messages }}</strong></article>
+      <article><span>Participants</span><strong>{{ summary.participants }}</strong></article>
+    </section>
+
+    <section class="table-section">
+      <h2>Parsed data preview</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Timestamp</th>
+            <th>Sender</th>
+            <th>Message</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in preview_rows %}
+          <tr>
+            <td>{{ row.timestamp }}</td>
+            <td>{{ row.sender }}</td>
+            <td>{{ row.message }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

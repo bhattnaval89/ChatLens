@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChatLens</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}" />
+</head>
+<body>
+  <main class="layout">
+    <section class="intro">
+      <p class="eyebrow">LOCAL-FIRST CHAT ANALYTICS</p>
+      <h1>ChatLens</h1>
+      <p class="description">
+        Upload a WhatsApp chat export to explore activity, participation,
+        and conversation patterns.
+      </p>
+
+      <form class="upload-form" action="/analyze" method="post" enctype="multipart/form-data">
+        <label for="chat-file">WhatsApp export (.txt)</label>
+        <input id="chat-file" name="chat_file" type="file" accept=".txt" required />
+        <button type="submit">Analyze chat</button>
+      </form>
+    </section>
+
+    <aside class="instructions">
+      <h2>How it works</h2>
+      <ol>
+        <li>Open the WhatsApp group.</li>
+        <li>Export the chat without media.</li>
+        <li>Select the exported <code>.txt</code> file here.</li>
+        <li>Explore the generated insights.</li>
+      </ol>
+
+      <p class="privacy-note">
+        Your file is analyzed only for the current session and is not saved.
+      </p>
+    </aside>
+  </main>
+</body>
+</html>

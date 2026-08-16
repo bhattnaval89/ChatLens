@@ -1,0 +1,146 @@
+:root {
+  font-family: Arial, sans-serif;
+  color: #1f2937;
+  background: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.layout {
+  width: min(960px, calc(100% - 2rem));
+  margin: 4rem auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+
+.intro,
+.instructions {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.eyebrow {
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+}
+
+h1 {
+  margin: 0.5rem 0;
+  font-size: 2.5rem;
+}
+
+.description,
+.privacy-note {
+  color: #475569;
+  line-height: 1.6;
+}
+
+.upload-form {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+input,
+button {
+  font: inherit;
+  padding: 0.75rem;
+}
+
+button {
+  border: 0;
+  border-radius: 6px;
+  background: #0f766e;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #115e59;
+}
+
+.instructions ol {
+  padding-left: 1.25rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 700px) {
+  .layout {
+    grid-template-columns: 1fr;
+    margin: 1rem auto;
+  }
+}
+.error {
+  color: #b91c1c;
+  margin-top: 1rem;
+}
+
+.dashboard {
+  width: min(1000px, calc(100% - 2rem));
+  margin: 3rem auto;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.metrics article,
+.table-section {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.metrics span {
+  display: block;
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.metrics strong {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 1.8rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+td:last-child {
+  max-width: 420px;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 700px) {
+  .metrics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .table-section {
+    overflow-x: auto;
+  }
+}
